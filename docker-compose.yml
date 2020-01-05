@@ -1,0 +1,34 @@
+version: '3.7'
+
+services:
+  service:
+    image: ${DOCKER_REGISTRY-}service
+    build:
+      context: ../Service
+      dockerfile: Dockerfile
+    ports:
+       - "5000:80"
+
+  frontend_angular:
+    image: ${DOCKER_REGISTRY-}frontend_angular
+    build:
+      context: ../Frontend_Angular
+      dockerfile: Dockerfile
+    ports:
+       - "8000:80"
+
+  frontend_react:
+    image: ${DOCKER_REGISTRY-}frontend_react
+    build:
+      context: ../Frontend_React
+      dockerfile: Dockerfile
+    ports:
+       - "8001:80"
+
+  frontend_javascript:
+    image: ${DOCKER_REGISTRY-}frontend_javascript
+    build:
+      context: ../Frontend_Javascript
+      dockerfile: Dockerfile
+    ports:
+       - "8002:80"
