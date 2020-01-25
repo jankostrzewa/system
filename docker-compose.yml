@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   service:
-    image: ${DOCKER_REGISTRY-}service
+    image: jankostrzewa/service
     build:
       context: ../Service
       dockerfile: Dockerfile
@@ -10,7 +10,7 @@ services:
        - "8000:80"
 
   frontend_angular:
-    image: ${DOCKER_REGISTRY-}frontend_angular
+    image: jankostrzewa/frontend_angular
     build:
       context: ../Frontend_Angular
       dockerfile: Dockerfile
@@ -18,7 +18,7 @@ services:
        - "8001:80"
 
   frontend_react:
-    image: ${DOCKER_REGISTRY-}frontend_react
+    image: jankostrzewa/frontend_react
     build:
       context: ../Frontend_React
       dockerfile: Dockerfile
@@ -26,7 +26,7 @@ services:
        - "8002:80"
 
   frontend_javascript:
-    image: ${DOCKER_REGISTRY-}frontend_javascript
+    image: jankostrzewa/frontend_javascript
     build:
       context: ../Frontend_Javascript
       dockerfile: Dockerfile
